@@ -76,7 +76,7 @@ function spawnTheBomb() {
 	}
 	gameContainer.appendChild(bomb)
 }
-const spawnBombInterval = setInterval(spawnTheBomb, 2000)
+const spawnBombInterval = setInterval(spawnTheBomb, 800)
 
 function checkCollisions() {
 	let characterPositionX = parseInt(character.style.left)
