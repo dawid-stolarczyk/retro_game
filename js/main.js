@@ -1,5 +1,6 @@
 var endedGame = false
 const gameContainer = document.getElementById('gameContainer')
+const computerImg = document.getElementById('computerImg')
 
 const character = document.getElementById('character')
 var godmode = false
@@ -77,8 +78,8 @@ function spawnTheBomb() {
 	gameContainer.appendChild(bomb)
 }
 const spawnBombInterval = setInterval(spawnTheBomb, 800)
-
 function checkCollisions() {
+	let fireBorder = window.innerHeight * 0.51
 	let characterPositionX = parseInt(character.style.left)
 	let bombs = document.querySelectorAll('.bomb')
 	bombs.forEach(bomb => {
@@ -87,13 +88,13 @@ function checkCollisions() {
 		if (
 			characterPositionX <= bombLeftVal + 50 &&
 			characterPositionX + 50 >= bombLeftVal &&
-			bombTopVal > 435 &&
+			bombTopVal > fireBorder &&
 			!godmode
 		) {
 			var explosion = document.createElement('img')
 			explosion.classList.add('explosionGif')
 			explosion.src = './img/explosion.gif'
-			explosion.style.top = bombTopVal - 100 + 'px'
+			explosion.style.bottom = '0'
 			explosion.style.left = bombLeftVal + 'px'
 			setTimeout(() => {
 				explosion.remove()

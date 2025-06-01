@@ -34,6 +34,7 @@ body {
 .character {
 	position: absolute;
 	bottom: 0;
+	transition: all 0.1s;
 }
 .bomb {
 	position: absolute;
@@ -41,7 +42,7 @@ body {
 .explosionGif {
 	position: absolute;
 	width: 100px;
-	transform: translate(-40%, -50%);
+	transform: translateX(-42%);
 }
 .hearts {
 	position: relative;
